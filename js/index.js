@@ -4,7 +4,6 @@
 // =======================================
 (function($){
     var DropdownSelect = function (element, options) {
-        console.log('dsfdsf')
         this.element = $(element);
         this.dropMenu = $('[role="dropdown-menu"]', element);
         this.options = $.extend({onSelect: this.select}, options);
@@ -34,23 +33,29 @@
         $('[role="value"]', element).val(value);
     };
 
-    // =======================================
-    // CREATE AND INIT JQUERY PLUGIN
-    // =======================================
+// =======================================
+// CREATE AND INIT JQUERY PLUGIN
+// =======================================
 
     function Plugin(options) {
       return this.each(function () {
         new DropdownSelect(this, options);
       })
     }
+
     $.fn.dropdownSelect = Plugin;
     $.fn.Constructor = DropdownSelect;
+
 })(jQuery);
+
+// =======================================
+// INIT COMPONENTS
+// =======================================
 
 $(function() {
 // в onSelect передается функция которая вызывается при нажатии на элемент выпадающего списка
     $('#drop1').dropdownSelect(); // use default onselect callback
-    
+
     $('#drop2').dropdownSelect({ //use users onselect callback
       onSelect: function (selectedItem, element) {
         var value = $(selectedItem).data("value");
@@ -58,5 +63,5 @@ $(function() {
         $('[role="value"]', element).val(value);
       }
     });
-  
+
 });
