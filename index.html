@@ -49,9 +49,36 @@
         <li class='menu-item' data-name="+1" data-value="+1" role="menu-item">
           +1 USA
         </li>
-
-
       </ul>
+    </div>
+  </div>
+
+  <div class="select">
+    <div id="drop3" class="dropdown select-wrapper" role="dropdown">
+        <span class="selected-item" role="dropdown-toggle">
+          <span role="name">Country code</span>
+        </span>
+        <input class="selected-item" type="hidden" name="birthday.day" role="value">
+        <ul class="dropdown-menu dropdown select-wrapper" role="dropdown-menu">
+            <li class="menu-item selected"
+                data-name="+7"
+                data-value="32"
+                data-iso-code="ru"
+                data-country="russia"
+                role="menu-item" >
+                <span class="iso-list-item">+7</span> 
+                <span class="name-list-item">Russian</span>
+            </li>
+            <li class="menu-item selected"
+                data-name="+1"
+                data-value="21"
+                data-iso-code="us"
+                data-country="usa"
+                role="menu-item" >
+                <span class="iso-list-item">+1</span> 
+                <span class="name-list-item">USA</span>
+            </li>
+          </ul>
     </div>
   </div>
 
@@ -60,6 +87,11 @@
 <script src='https://raw.githubusercontent.com/digitalBush/jquery.maskedinput/1.4.1/dist/jquery.maskedinput.js'></script>
 
 <script src="js/index.js"></script>
+<script>
+  new DropdownSelect($('#drop1'));
+  new DropdownSelect($('#drop2'));
+  new DropdownSelect($('#drop3'));
+</script>
 
 </body>
 </html>
